@@ -1,0 +1,20 @@
+type Payment {
+    id: ID
+    amount: Float
+    currency: String
+    status: String
+    productId: ID
+    createdAt: String
+}
+
+type Query {
+    allPayments: [Payment]
+    paymentById(id: ID!): Payment
+}
+
+type Mutation {
+    createPayment(amount: Float!, currency: String!, productId: ID!): Payment
+    updatePayment(id: ID!, status: String!): Payment
+    deletePayment(id: ID!): Boolean
+}
+
